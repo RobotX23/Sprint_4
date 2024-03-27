@@ -40,4 +40,4 @@ class TestBooksCollector:
 
         assert collector.get_book_genre("Гордость и предубеждение и зомби") == "Фантастика" and collector.get_book_genre("Что делать, если ваш кот хочет вас убить") == "Детективы"
 
-    def
+    def test

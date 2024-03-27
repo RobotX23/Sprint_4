@@ -50,3 +50,5 @@ class TestBooksCollector:
         collector.set_book_genre("Гордость и предубеждение и зомби", "Фантастика")
         collector.set_book_genre("Что делать, если ваш кот хочет вас убить", "Детективы")
         assert "Гордость и предубеждение и зомби" in collector.get_books_with_specific_genre("Фантастика")
+
+    def

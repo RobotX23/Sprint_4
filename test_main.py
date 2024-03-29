@@ -40,7 +40,7 @@ class TestBooksCollector:
         collector = BooksCollector()
         collector.add_new_book(name)
         collector.add_book_in_favorites(name)
-        assert name in collector.favorites
+        assert name in collector.get_list_of_favorites_books()
 
     @pytest.mark.parametrize('name', ['Что делать, если ваш кот хочет вас убить', '1+1', 'Стрела'])
     def test_delete_book_from_favorites_two_books(self, name):
@@ -48,11 +48,5 @@ class TestBooksCollector:
         collector.add_new_book(name)
         collector.add_book_in_favorites(name)
         collector.delete_book_from_favorites(name)
-        assert collector.favorites == []
+        assert collector.get_list_of_favorites_books() == []
 
-    def test_get_list_of_favorites_books_two_books(self):
-        collector = BooksCollector()
-        collector.add_new_book("Гордость и предубеждение и зомби")
-        collector.add_new_book("Что делать, если ваш кот хочет вас убить")
-        collector.add_book_in_favorites("Что делать, если ваш кот хочет вас убить")
-        assert "Что делать, если ваш кот хочет вас убить" in collector.get_list_of_favorites_books()
